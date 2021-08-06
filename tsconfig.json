@@ -1,0 +1,29 @@
+{
+    "compilerOptions": {
+      "resolveJsonModule": true,
+      "target": "es5",
+      "module": "commonjs",
+      "lib": ["ES2015"],
+      "removeComments": true,
+      "noEmit": true,
+      "strict": true,
+      "noImplicitThis": true,
+      "alwaysStrict": true,
+      "noUnusedLocals": true,
+      "noUnusedParameters": true,
+      "noImplicitReturns": true,
+      "noFallthroughCasesInSwitch": true,
+      "noUncheckedIndexedAccess": true,
+      "noPropertyAccessFromIndexSignature": true,
+      "moduleResolution": "node",
+      "baseUrl": "./",
+      "paths": {
+        "@tcgen/core": ["./src"]
+      },
+      "allowSyntheticDefaultImports": true,
+      "esModuleInterop": true,
+      "skipLibCheck": true,
+      "forceConsistentCasingInFileNames": true
+    }
+  }
+  
