@@ -21,6 +21,9 @@
     "typescript": "^4.3.5"
   },
   "description": "",
+  "repository": {
+    "url": "https://github.com/GGolfz/tcgen.git"
+  },
   "bin": {
     "tcgen": "bin/index"
   }
