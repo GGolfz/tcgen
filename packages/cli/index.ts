@@ -29,5 +29,5 @@ async function generateTestCase(template: string) {
     testcase = Generator.generate(template);
     await Exportor.writeFile(`testcase.${extension}`, testcase);
   }
-  console.log("Generate Event Success!");
+  console.log("Generate Testcase Success!");
 }
