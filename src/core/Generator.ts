@@ -12,6 +12,7 @@ export class Generator {
   static generate(template: string) {
     const inputsList: Array<Array<Input>> = Extractor.extract(template);
     let result: string = "";
+    let resultArray:Array<string> = [];
     for (let i = 0; i < inputsList.length; i++) {
       let line = inputsList[i] ?? [];
       let lineResult: Array<string> = [];
@@ -38,15 +39,16 @@ export class Generator {
           }
         }
       }
-      result += lineResult.join(" ") + "\n";
+      resultArray.push(lineResult.join(" "));
     }
+    result = resultArray.join("\n");
     return result;
   }
 
   static generateFromString(input: StringInput): string {
     let result: string = "";
     result = this.generateFromRegex(
-      `[a-zA-z]{${input.minLength},${input.maxLength}}`
+      `[a-zA-Z]{${input.minLength},${input.maxLength}}`
     );
     return result;
   }
