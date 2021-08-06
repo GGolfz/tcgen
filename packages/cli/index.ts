@@ -23,17 +23,21 @@ async function generateTestCase(template?: string) {
   let extension = "in";
   if (options.extension) extension = options.extension;
   let testcase;
-  if (!template) {
-    template = await fs.readFileSync("../testcase/template.txt", "utf8");
+  if (!template && options.source) {
+    template = await fs.readFileSync(options.source, "utf8");
   }
-  if (options.num) {
-    for (let i = 1; i <= options.num; i++) {
+  if (template) {
+    if (options.num) {
+      for (let i = 1; i <= options.num; i++) {
+        testcase = Generator.generate(template);
+        await Exportor.writeFile(`${i}.${extension}`, testcase);
+      }
+    } else {
       testcase = Generator.generate(template);
-      await Exportor.writeFile(`${i}.${extension}`, testcase);
+      await Exportor.writeFile(`testcase.${extension}`, testcase);
     }
+    console.log("Generate Testcase Success!");
   } else {
-    testcase = Generator.generate(template);
-    await Exportor.writeFile(`testcase.${extension}`, testcase);
+    console.log("Cannot generate testcase (Template is not exist)");
   }
-  console.log("Generate Testcase Success!");
 }
