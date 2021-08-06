@@ -18,6 +18,8 @@
 
 `-n, --num [number]`: Number of Testcase (Optional: Default is 1)
 
+`-s, --source [source]`: Source of Template File (Optional)
+
 `-e, --extension [extension]`: File Extension (Optional: Default is 'in')
 
 ### Template
