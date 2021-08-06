@@ -1,6 +1,6 @@
 {
   "name": "@ggolfz/tcgen",
-  "version": "1.1.5",
+  "version": "1.2.2",
   "main": "index.js",
   "scripts": {
     "start": "npm run build && npm run global",
